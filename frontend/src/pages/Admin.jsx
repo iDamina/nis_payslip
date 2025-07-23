@@ -35,7 +35,7 @@ const Admin = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/users', {
+      const res = await axios.get('/api/users', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data);
@@ -48,7 +48,7 @@ const Admin = () => {
     e.preventDefault();
     setCreateLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/users', form, {
+      await axios.post('/api/users', form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success('✅ User created successfully');
@@ -65,7 +65,7 @@ const Admin = () => {
     e.preventDefault();
     setUpdateLoading(true);
     try {
-      await axios.put(`http://localhost:5000/api/users/${passwordUpdate.userId}/password`, {
+      await axios.put(`/api/users/${passwordUpdate.userId}/password`, {
         password: passwordUpdate.password,
       }, {
         headers: { Authorization: `Bearer ${token}` },
@@ -82,7 +82,7 @@ const Admin = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this user?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/users/${id}`, {
+      await axios.delete(`/api/users/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success('✅ User deleted');

@@ -46,7 +46,7 @@ const PayslipSearch = () => {
   try {
     const token = localStorage.getItem('token');
 
-    const response = await axios.get('http://localhost:5000/api/payslip', {
+    const response = await axios.get('/api/payslip', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
