@@ -1,0 +1,11 @@
+{
+  "css.validate": false,
+  "tailwindCSS.experimental.configFile": "tailwind.config.js",
+  "tailwindCSS.emmetCompletions": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  }
+}
