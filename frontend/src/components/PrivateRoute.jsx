@@ -1,4 +1,5 @@
 // src/components/PrivateRoute.jsx
+import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { isAuthenticated, getToken, logout } from '../utils/auth';
 import { jwtDecode } from 'jwt-decode'; // ✅ This is the correct import
